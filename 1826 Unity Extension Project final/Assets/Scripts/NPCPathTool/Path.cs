@@ -1,19 +1,14 @@
-/* 
-Disclaimer: The creation of some parts of this class were inspired by the second answer to this stack overflow post
-(https://stackoverflow.com/questions/50788120/how-to-make-individual-anchor-points-of-bezier-continuous-or-non-continuous)
-*/
-
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path // not inheriting from monobehaviour so that Unity won't complain when this class is directly instantiated
+public class Path
 {
     public List<ControlPoint> points;
 
     bool loop;
 
-    public Path(Vector3 position) // constructor method for Path, a path should always have at least two control points
-                                  // so that it can still be defined as a path
+    // a path should always have at least two control points so that it can be defined as a path
+    public Path(Vector3 position) 
     {
         points = new List<ControlPoint>
         {
